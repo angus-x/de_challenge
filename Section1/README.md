@@ -20,6 +20,6 @@
         
 ```
 
-- In this solution, pickle files are used to store and pass data between tasks. In production environment, we could consider cloud storage + MySQL/postgreDB for the setup.
+- In this solution, pickle files are used to store and pass data between tasks. In production environment, we would instead consider cloud storage + MySQL/postgreDB for the setup.
 
-- Please refer to etl.py for the details of the etl process
+- Please refer to etl.py for the details of the etl process.
