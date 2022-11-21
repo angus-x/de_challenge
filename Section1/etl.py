@@ -46,7 +46,7 @@ def etl_taskflow():
         # save dataframe in pickle
         df.to_pickle(input_folder / 'data.pkl')
 
-        # delete input csvs so that they will not processed again in the nxt run
+        # delete input csvs so that they will not be processed again in the nxt run
         for f in input_files:
             os.remove(f)
 
@@ -74,7 +74,7 @@ def etl_taskflow():
             (date_ref - pd.to_datetime(df['date_of_birth'])) / np.timedelta64(1, 'Y')) > 18
 
         # check email addresses, .com or .net
-        # not that email address is case insensitive
+        # note that email address is case insensitive
         email_pattern = r'\b[a-z0-9._-]+@[a-z0-9.-]+\.(?:com|net)\b'
         df['valid_email'] = [True if re.fullmatch(
             email_pattern, e, flags=re.IGNORECASE) else False for e in df['email']]
